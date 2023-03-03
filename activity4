@@ -1,0 +1,24 @@
+Understanding the Problem
+  a. Understanding the statement of the problem
+    1. What issues occur when dealing with a campus-wide election event?
+      A: Traditionally, a student organization election is run through a pen and paper method. The commissioners create a unique signed paper to not be duplicated and the students cast their vote on a secure ballot box. This works well both for the students and the commissioners. However, there is a growing number of students which could affect the time to process each vote and could lead to skipping school days.
+    2. Previously, online electronic voting had occurred before but led to many students being skeptical and ended up arguing about the system. How can this program be different from the past?
+      A: There was one flaw with their system: predictable username and password. The program being online means it is accessible to everyone, including outside of the institution, to cast their vote at any given time. One major flaw was that of the predefined usernames and passwords that are set by the webmasters and are not individually and uniquely set by the account holder. Learning from that mistake, this program shall be used in a physical manner and on an intranet network, assuming there would be multiple terminals.
+  b. Understand the goals
+    1. Which goals are mandatory and which ones are desirable?
+      A: The goal is to keep the election process easier, scalable, and efficient. Desirable more accessible to more students,
+    2. What are the most challenging goals and what makes them difficult to achieve?
+      A: Keeping the data intact and out of impurity would impose a challenge as the data is very valuable.
+  c. Understand the data
+    1. What assumptions can be safely made about the correctness and integrity of the input from voters?
+      A: Before the election, another party inspects the database for any free of arbitrary data and then is locked to read-only to anyone during and after the duration of the election process for the utmost correct input. Off-site backup should be in case of storage failure.
+    2. What is the value of the data? What are the related security threats to be expected?
+      A: The value held is very important. It is a major keypoint to protect the democracy of the students.
+  d. Understand the conditions
+    1. When can the commissioners modify the program?
+      A: The commissioners may only modify the program before the election proper as it must be certified by a higher school official.
+    2. What data is limited to the students?
+      A: Individual students can input which candidate they choose. As for everyone, only the overall tally is shown.
+  e. Build a Model
+    1. Given the data, how can this be visualized?
+      A: Given that the data is stored on a database, it can be interpreted to a visual representation of the data to easily assess the tally. Individually, we can view the data from the database.
