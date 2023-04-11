@@ -1,0 +1,21 @@
+Student:Student   Ballot:Ballot   Candidate:Candidate
+    |                |                |
+    |----------------|                |
+    |login(studentID)|                |
+    |----------------|                |
+    |                |----------------|
+    |           vote(ballotID)        |
+    |                |----------------|
+    |                |                |----------------|
+    |           getCandidates()       |getCandidateID()|
+    |                |                |----------------|
+    |                |----------------|                |
+    |           displayCandidates()   |                |
+    |                |----------------|                |
+    |           selectCandidate()     |                |
+    |                |----------------|                |
+    |           updateVotes()         |updateVotes()   |
+    |                |----------------|                |
+    |                |----------------|                |
+    |           displayConfirmation() |                |
+    +---------------------------------+----------------+
