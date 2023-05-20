@@ -9,10 +9,10 @@
 
         // Error handling
         if (empty($username)) {
-            header("Location: ../admin.php?error=emptyuserfield");
+            header("Location: ../admin?error=emptyuserfield");
             exit();
         } else if (empty($password)) {
-            header("Location: ../admin.php?error=emptypassfield");
+            header("Location: ../admin?error=emptypassfield");
             exit();
         } else {
 
@@ -24,12 +24,12 @@
                 header("Location: ../panel.php");
                 exit();
             } else {
-                header("Location: ../admin.php?error=invalid_credentials");
+                header("Location: ../admin?error=invalid_credentials");
                 exit();
             }
         }
     }
     else {
-        header("Location: ../admin.php");
+        header("Location: ../admin");
         exit();
     }

@@ -3,12 +3,13 @@
 --
 
 CREATE DATABASE voting_system;
+USE voting_system;
 
 --
 -- Table: `users`
 --
 
-CREATE TABLE users (
+CREATE TABLE voting_system.users (
     id INT UNIQUE AUTO_INCREMENT,
     firstName VARCHAR(30) NOT NULL,
     lastName VARCHAR(30) NOT NULL,
@@ -24,7 +25,7 @@ CREATE TABLE users (
 -- Table: `votes`
 --
 
-CREATE TABLE votes (
+CREATE TABLE voting_system.votes (
     id INT UNIQUE AUTO_INCREMENT,
     username VARCHAR(10) NOT NULL,
     gradeLevel INT NOT NULL,

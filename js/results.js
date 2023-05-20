@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     function count(id1, id2, categ) {
         $.ajax({
-            url: 'http://localhost/voting_system/api/',
+            url: 'http://localhost/cpe9_activities/api/',
             dataType: 'json',
             success: function(data) {
                 const length = data.length;

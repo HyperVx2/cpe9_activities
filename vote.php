@@ -30,7 +30,7 @@
                     </a>
                 </div>
             </div>
-            <h1 class="mt-3 mb-3 font-weight-300">Welcome to the Automated 2020 Election, <?php echo $name; ?>!</h1>
+            <h1 class="mt-3 mb-3 font-weight-300">Welcome to the SSU USC Elections 2023, <?php echo $name; ?>!</h1>
             <hr class="mx-auto">
             <?php
                 if(isset($_GET['success'])) {
@@ -44,7 +44,7 @@
                     <h1 class="mb-3 font-weight-300" style="line-height: 1.5;">Your vote has been casted. Thank you for cooperating.</h1>
                     <div class="row text-center">
                         <a href="includes/user_logout.inc.php" class="col-4 mt-2 btn btn-danger px-4 mr-2 ml-auto">Logout</a>
-                        <a href="results.html" class="col-4 mt-2 btn btn-purple px-4 ml-2 mr-auto">Result Page</a>
+                        <a href="results.html" class="col-4 mt-2 btn btn-blue px-4 ml-2 mr-auto">Result Page</a>
                     </div>
                 </div>
             </div>
@@ -63,24 +63,24 @@
             ?>
             <form class="form-signin text-center mx-auto" action="includes/vote.inc.php" method="POST">
 
-                <section id="anime" class="mb-3">
-                    <h2>Favorite Naruto Character</h2>
+                <section id="pres" class="mb-3">
+                    <h2>President</h2>
                     <div class="row selector">
                         <div class="col-4 pl-10">
-                            <input type="radio" name="anime" id="naruto" class="unchecked" value="naruto" />
-                            <label for="naruto" class="selector-option naruto"></label>
+                            <input type="radio" name="pres" id="pres_1" class="unchecked" value="pres_1" />
+                            <label for="pres_1" class="selector-option pres_1"></label>
                         </div>
                         <div class="col-4 my-auto">
-                            <h1 id="anime-string"></h1>
+                            <h1 id="pres-string"></h1>
                         </div>
                         <div class="col-4 pr-10">
-                            <input type="radio" name="anime" id="sasuke" class="unchecked" value="sasuke" />
-                            <label for="sasuke" class="selector-option sasuke ml-6"></label>
+                            <input type="radio" name="pres" id="pres_2" class="unchecked" value="pres_2" />
+                            <label for="pres_2" class="selector-option pres_2 ml-6"></label>
                         </div>
                     </div>
                 </section>
 
-                <section id="credit-cards" class="my-3">
+                <section id="vpres" class="my-3">
                     <h2>Favorite Credit Card</h2>
                     <div class="row selector">
                         <div class="col-4 pl-10">
@@ -102,7 +102,7 @@
                         <input class="form-check-input" type="checkbox" id="inlineFormCheck" required>
                         <label class="form-check-label ml-1" for="inlineFormCheck">I have reviewed my votes and ready to cast it</label>
                     </div>
-                    <button class="mt-3 btn btn-purple px-4 mx-auto" type="submit" name="submit-btn">Cast Vote</button>
+                    <button class="mt-3 btn btn-blue px-4 mx-auto" type="submit" name="submit-btn">Cast Vote</button>
                 </section>
             </form>
             <?php
@@ -118,7 +118,7 @@
                     <h1 class="mb-3 font-weight-300" style="line-height: 1.5;">You can only vote once.</h1>
                         <div class="row text-center">
                             <a href="includes/user_logout.inc.php" class="col-4 mt-2 btn btn-danger px-4 mr-2 ml-auto">Logout</a>
-                            <a href="results.php" class="col-4 mt-2 btn btn-purple px-4 ml-2 mr-auto">Result Page</a>
+                            <a href="results.php" class="col-4 mt-2 btn btn-blue px-4 ml-2 mr-auto">Result Page</a>
                         </div>
                     </div>
             </div>

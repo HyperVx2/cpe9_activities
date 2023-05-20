@@ -16,7 +16,7 @@
             exit();
         } else {
             //Checking the username in database
-            $sql = "SELECT * FROM users WHERE username=?";
+            $sql = "SELECT * FROM voting_system.users WHERE username=?";
             $stmt = $conn -> stmt_init();
             if(!$stmt -> prepare($sql)) {
                 header("Location: ../index.php?error=sqlerror");
