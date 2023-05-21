@@ -30,7 +30,7 @@
                     </a>
                 </div>
             </div>
-            <h1 class="mt-3 mb-3 font-weight-300">Welcome to the SSU USC Elections 2023, <?php echo $name; ?>!</h1>
+            <h1 class="mt-3 mb-3 font-weight-300">Welcome to the Automated 2020 Election, <?php echo $name; ?>!</h1>
             <hr class="mx-auto">
             <?php
                 if(isset($_GET['success'])) {
@@ -52,7 +52,7 @@
                 }
                 else {
                     require 'includes/database.php';
-                    $sql = "SELECT firstName, username, voted FROM users WHERE firstName=? AND username=? AND voted=0";
+                    $sql = "SELECT firstName, username, voted FROM voting_system.users WHERE firstName=? AND username=? AND voted=0";
                     $stmt = $conn -> stmt_init();
                     if($stmt -> prepare($sql)) {
                         $stmt -> bind_param("ss", $name, $username);
@@ -63,39 +63,28 @@
             ?>
             <form class="form-signin text-center mx-auto" action="includes/vote.inc.php" method="POST">
 
-                <section id="pres" class="mb-3">
-                    <h2>President</h2>
-                    <div class="row selector">
-                        <div class="col-4 pl-10">
-                            <input type="radio" name="pres" id="pres_1" class="unchecked" value="pres_1" />
-                            <label for="pres_1" class="selector-option pres_1"></label>
-                        </div>
-                        <div class="col-4 my-auto">
-                            <h1 id="pres-string"></h1>
-                        </div>
-                        <div class="col-4 pr-10">
-                            <input type="radio" name="pres" id="pres_2" class="unchecked" value="pres_2" />
-                            <label for="pres_2" class="selector-option pres_2 ml-6"></label>
-                        </div>
-                    </div>
-                </section>
+            <div class="row selector">
+                <h2>President</h2>
+                <select class="form-control" id="inputPresident">
+                    <option value="pres1">Liana Fuentes (Liberal)</option>
+                    <option value="pres2">Alanna Lin (Independent)</option>
+                    </select>
+            </div>
 
-                <section id="vpres" class="my-3">
-                    <h2>Favorite Credit Card</h2>
-                    <div class="row selector">
-                        <div class="col-4 pl-10">
-                            <input type="radio" name="credit-card" id="visa" class="unchecked" value="visa" />
-                            <label for="visa" class="selector-option visa"></label>
-                        </div>
-                        <div class="col-4 my-auto">
-                            <h1 id="cc-string"></h1>
-                        </div>
-                        <div class="col-4 pr-10">
-                            <input type="radio" name="credit-card" id="mastercard" class="unchecked" value="mastercard" />
-                            <label for="mastercard" class="selector-option mastercard"></label>
-                        </div>
-                    </div>
-                </section>
+            <div class="row selector">
+                <h2>Vice-President</h2>
+                <select class="form-control" id="inputVicePresident">
+                    <option value="vpres1">Mikey Knight (Liberal)</option>
+                    <option value="v4pres2">Arnold Rodriguez (Independent)</option>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect2">Representatives (select up to 5)</label>
+                <select multiple class="form-control" id="inputRepresentative" name="representatives[]">
+                    
+                 </select>
+            </div>
 
                 <section id="submit" class="mb-3 mt-5">
                     <div class="form-check my-auto text-center">

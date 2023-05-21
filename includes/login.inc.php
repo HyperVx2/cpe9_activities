@@ -38,6 +38,7 @@
                         session_start();
                         $_SESSION['userID'] = $row['username'];
                         $_SESSION['name'] = $row['firstName'];
+                        $_SESSION['program'] = $row['program'];
                         header("Location: ../terms.php");
                         exit();
                     }

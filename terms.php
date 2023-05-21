@@ -2,7 +2,7 @@
     session_start();
     $name = $_SESSION['name'];
     require 'includes/database.php';
-    $sql = "SELECT firstName, voted FROM users WHERE firstName=? AND voted=0";
+    $sql = "SELECT firstName, voted FROM voting_system.users WHERE firstName=? AND voted=0";
     $stmt = $conn -> stmt_init();
     if($stmt -> prepare($sql)) {
         $stmt -> bind_param("s", $name);

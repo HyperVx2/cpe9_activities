@@ -45,17 +45,17 @@
             <div class="col-6 my-auto mx-auto">
                 <form class="form-signin row" method="POST" action="includes/user.inc.php">
                     <h1 class="h3 mb-3 font-weight-300">Admin Panel</h1>
-                    <div class="col-6 text-left">
+                    <div class="col-6 text-left mt-2">
+                        <label for="username" class="form-label">ID Number</label>
+                        <input type="text" name="username" class="form-control" id="username" placeholder="XXXXXX" autocomplete="off" required>
+                    </div>
+                    <div class="col-12 text-left">
                         <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name" autocomplete="off" required>
+                        <input type="text" name="firstName" id="firstName" class="form-control" placeholder="Juan" autocomplete="off" required>
                     </div>
-                    <div class="col-6 text-left">
+                    <div class="col-12 text-left">
                         <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" autocomplete="off" required>
-                    </div>
-                    <div class="col-12 text-left mt-2">
-                        <label for="username" class="form-label">User ID</label>
-                        <input type="text" name="username" class="form-control" id="username" placeholder="User ID" autocomplete="off" required>
+                        <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Dela Cruz" autocomplete="off" required>
                     </div>
                     <div class="col-12 text-left mt-2">
                         <label for="password" class="form-label">Password</label>
@@ -65,26 +65,51 @@
                         </div>
                     </div>
                     <div class="col-6 text-left mt-2">
-                        <label for="inputLevel" class="form-label">Grade Level</label>
-                        <select id="inputLevel" class="form-select" name="inputLevel">
-                            <option selected value=7>Grade 7</option>
-                            <option value=8>Grade 8</option>
-                            <option value=9>Grade 9</option>
-                            <option value=10>Grade 10</option>
-                            <option value=11>Grade 11</option>
-                            <option value=12>Grade 12</option>
+                        <label for="inputProgram" class="form-label">Program</label>
+                        <select id="inputProgram" class="form-select" name="inputProgram">
+                            <optgroup label="College of Engineering">
+                                <option selected value="coeng-bsce">BS Civil Engineering (BSCE)</option>
+                                <option value="coeng-bsee">BS Electrical Engineering (BSEE)</option>
+                                <option value="coeng-bsece">BS Electronics Engineering (BSECE)</option>
+                                <option value="coeng-bscpe">BS Computer Engineering (BSCpE)</option>
+                            </optgroup>
+                            <optgroup label="College of Education">
+                                <option value="coed-bsed">Bachelor of Secondary Education (BSED)</option>
+                                <option value="coed-beed">Bachelor of Elementary Education (BEEd)</option>
+                                <option value="coed-bste">BS Technician Education (BSTE)</option>
+                                <option value="coed-bped">Bachelor of Physical Education (BPED)</option>
+                                <option value="coed-btled">Bachelor of Technology and Livelihood Education (BTLEd)</option>
+                                <option value="coed-beced">Bachelor of Early Childhood Education (BECEd)</option>
+                            </optgroup>
+                            <optgroup label="College of Nursing and Health Sciences">
+                                <option value="conhs-bsn">BS Nursing (BSN)</option>
+                                <option value="conhs-bspharma">BS Pharmacy (BSPharma)</option>
+                                <option value="conhs-bsnd">BS Nutrition & Dietetics (BSND)</option>
+                            </optgroup>
+                            <optgroup label="College of Arts and Sciences">
+                                <option value="cas-bsinfotech">BS Information Technology (BSInfoTech)</option>
+                                <option value="cas-bss">BS Statistics (BSS)</option>
+                                <option value="cas-bsis">BS Information System (BSIS)</option>
+                                <option value="cas-bspsycho">BS Psychology (BSPsycho)</option>
+                            </optgroup>
+                            <optgroup label="College of Industrial Technology">
+                                <option value="bsit-bsarch">BS Architecture (BSArch)</option>
+                                <option value="bsit-bsit">BS Industrial Industrial Technology (BSIT)</option>
+                                <option value="bsit-bt">Bachelor of Technology (BT)</option>
+                                <option value="bsit-bmt">Bachelor of Mechanical Technology (BMT)</option>
+                                <option value="bsit-bitech">Bachelor of Industrial Technology (BITech)</option>
+                                <option value="bsit-cbve">Competency-Based Vocational Education (CBVE)</option>
+                            </optgroup>
                         </select>
                     </div>
                     <div class="col-6 text-left mt-2">
-                        <label for="inputSection" class="form-label">Section</label>
-                        <select id="inputSection" class="form-select" name="inputSection">
-                            <option value=1 selected>Section A</option>
-                            <option value=2>Section B</option>
-                            <option value=3>Section C</option>
-                            <option value=4>Section D</option>
-                            <option value=5>Section E</option>
-                            <option value=6>Section F</option>
-                            <option value=7>Section G</option>
+                        <label for="inputLevel" class="form-label">Year Level</label>
+                        <select id="inputLevel" class="form-select" name="inputLevel">
+                            <option value=1 selected>1st Year</option>
+                            <option value=2>2nd Year</option>
+                            <option value=3>3rd Year</option>
+                            <option value=4>4th Year</option>
+                            <option value=5>5th Year</option>
                         </select>
                     </div>
                     <button class="col-3 btn btn-blue mx-auto mt-3 px-4" type="submit" name="submit-btn">Add</button>

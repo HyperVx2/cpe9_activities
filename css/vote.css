@@ -30,29 +30,6 @@ hr:not([size]) {
     -moz-appearance:none;
     appearance:none;
 }
-/* Candidates
-.naruto { 
-    background-image: url(../images/naruto.png); 
-    width: 100%;
-    height: 300px;
-}
-.sasuke {
-    background-image: url(../images/sasuke.png); 
-    width: 100%;
-    height: 300px;
-}
-.visa { 
-    background-image:url(http://i.imgur.com/lXzJ1eB.png); 
-    width: 100%;
-    height: 150px;
-}
-.mastercard { 
-    background-image:url(http://i.imgur.com/SJbRQF7.png); 
-    width: 100%;
-    height: 150px;
-}
-*/
-
 .selector input:active +.selector-option { opacity: .9; }
 .selector input:checked +.selector-option {
     -webkit-filter: none;

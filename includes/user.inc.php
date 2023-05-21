@@ -4,20 +4,20 @@
         require 'database.php';
 
         //Variables from panel
+        $username = $_POST['username'];
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
-        $username = $_POST['username'];
         $password = $_POST['password'];
-        $grade = $_POST['inputLevel'];
-        $section = $_POST['inputSection'];
+        $program = $_POST['inputProgram'];
+        $level = $_POST['inputLevel'];
 
         //Error handlers
-        if(empty($firstName) || empty($lastName) || empty($username) || empty($password) || empty($grade) || empty($section)) {
+        if(empty($username) || empty($firstName) || empty($lastName) || empty($password) || empty($program) || empty($level)) {
             header("Location: ../panel.php?error=emptyfield");
             exit();
         }
         else {
-            $sql = "SELECT username FROM users WHERE username=?";
+            $sql = "SELECT username FROM voting_system.users WHERE username=?";
             $stmt = $conn -> stmt_init();
             if(!$stmt -> prepare($sql)) {
                 //SQL error
@@ -34,7 +34,7 @@
                     exit();
                 }
                 else {
-                    $sql = "INSERT INTO users (firstName, lastName, username, password, gradeLevel, section) VALUES (?, ?, ?, ?, ?, ?)";
+                    $sql = "INSERT INTO voting_system.users (username, firstName, lastName, password, program, yearLevel) VALUES (?, ?, ?, ?, ?, ?)";
                     $stmt = $conn -> stmt_init();
                     if(!$stmt -> prepare($sql)) {
                         //SQL error
@@ -43,7 +43,7 @@
                     }
                     else {
                         $hashed = password_hash($password, PASSWORD_DEFAULT);
-                        $stmt -> bind_param("ssssss", $firstName, $lastName, $username, $hashed, $grade, $section);
+                        $stmt -> bind_param("ssssss", $username, $firstName, $lastName, $hashed, $program, $level);
                         $stmt -> execute();
                         header("Location: ../panel.php?success=200&user=$username");
                         exit();
