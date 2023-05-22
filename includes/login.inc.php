@@ -39,6 +39,7 @@
                         $_SESSION['userID'] = $row['username'];
                         $_SESSION['name'] = $row['firstName'];
                         $_SESSION['program'] = $row['program'];
+                        $_SESSION['level'] = $row['yearLevel'];
                         header("Location: ../terms.php");
                         exit();
                     }

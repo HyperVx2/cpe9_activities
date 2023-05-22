@@ -29,8 +29,25 @@ CREATE TABLE voting_system.votes (
     id INT UNIQUE AUTO_INCREMENT,
     username VARCHAR(10) NOT NULL,
     program VARCHAR(15) NOT NULL,
+    yearLevel TINYINT(1) NOT NULL,
     president VARCHAR(10) NOT NULL,
     vpresident VARCHAR(10) NOT NULL,
-    rep VARCHAR(10) NOT NULL,
+    rep VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
+
+
+--
+-- Table: `candidates`
+--
+
+CREATE TABLE voting_system.candidates (
+    id INT UNIQUE AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    party VARCHAR(25) NOT NULL DEFAULT "IND",
+    program VARCHAR(15),
+    position VARCHAR(5) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+
