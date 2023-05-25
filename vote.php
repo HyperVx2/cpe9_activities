@@ -21,7 +21,7 @@
     }
 
     // Retrieve Candidates for President and Vice President
-    $sql = "SELECT id, name, position, party FROM voting_system.candidates WHERE program IS NULL AND (position = 'pres' OR position = 'vpres')";
+    $sql = "SELECT id, name, position, party FROM voting_system.candidates WHERE program IS NULL AND (position = 'president' OR position = 'vpresident')";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
         header("Location: ../vote.php?error=sqlerror");
@@ -32,9 +32,9 @@
         $presidentCandidates = array();
         $vicePresidentCandidates = array();
         while ($row = $result->fetch_assoc()) {
-            if ($row['position'] === 'pres') {
+            if ($row['position'] === 'president') {
                 $presidentCandidates[] = $row;
-            } elseif ($row['position'] === 'vpres') {
+            } elseif ($row['position'] === 'vpresident') {
                 $vicePresidentCandidates[] = $row;
             }
         }
@@ -145,7 +145,7 @@
                 <h2 for="inputRepresentative">Representatives (select up to 5)</h2>
                 <?php foreach ($representativeCandidates as $candidate) { ?>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="representatives" id="<?php echo $candidate['name']; ?>" value="<?php echo $candidate['id']; ?>">
+                        <input class="form-check-input" type="checkbox" name="representatives[]" id="<?php echo $candidate['name']; ?>" value="<?php echo $candidate['id']; ?>">
                         <label class="form-check-label" for="<?php echo $candidate['name']; ?>">
                             <?php echo $candidate['name'] . ' (' . $candidate['party'] . ')'; ?>
                         </label>
@@ -193,8 +193,8 @@
 
     <script>
     $(document).ready(function() {
-        $('input[name="representatives"]').on('change', function() {
-            var selectedCount = $('input[name="representatives"]:checked').length;
+        $('input[name="representatives[]"]').on('change', function() {
+            var selectedCount = $('input[name="representatives[]"]:checked').length;
             if (selectedCount > 5) {
                 $(this).prop('checked', false);
             }

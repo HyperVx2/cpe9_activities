@@ -28,11 +28,10 @@ CREATE TABLE voting_system.users (
 CREATE TABLE voting_system.votes (
     id INT UNIQUE AUTO_INCREMENT,
     username VARCHAR(10) NOT NULL,
-    program VARCHAR(15) NOT NULL,
     yearLevel TINYINT(1) NOT NULL,
-    president VARCHAR(10) NOT NULL,
-    vpresident VARCHAR(10) NOT NULL,
-    rep VARCHAR(255) NOT NULL,
+    president VARCHAR(50),
+    vpresident VARCHAR(50),
+    rep VARCHAR(255),
     PRIMARY KEY (id)
 );
 
@@ -46,7 +45,7 @@ CREATE TABLE voting_system.candidates (
     name VARCHAR(50) NOT NULL,
     party VARCHAR(25) NOT NULL DEFAULT "IND",
     program VARCHAR(15),
-    position VARCHAR(5) NOT NULL,
+    position VARCHAR(15) NOT NULL,
     PRIMARY KEY (id)
 );
 
