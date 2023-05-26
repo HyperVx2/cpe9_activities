@@ -17,7 +17,6 @@
                     $votesData[$row['id'] - 1] = array(
                         'id' => $row['id'],
                         'username' => $row['username'],
-                        'program' => $row['program'],
                         'yearLevel' => $row['yearLevel'],
                         'president' => $row['president'],
                         'vpresident' => $row['vpresident'],
